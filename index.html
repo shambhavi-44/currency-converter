@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="converter">
+    <header class="header">
+      <p class="eyebrow">CURRENCY TOOLS</p>
+      <h1>Currency Converter</h1>
+      <p>Convert an amount between currencies.</p>
+    </header>
+
+    <form id="converter-form">
+      <label for="amount">Amount</label>
+      <input
+        id="amount"
+        type="number"
+        min="0.01"
+        step="any"
+        value="1"
+        required
+      >
+
+      <div class="currency-row">
+        <div class="currency-field">
+          <label for="from-currency">From</label>
+          <select id="from-currency" required></select>
+        </div>
+
+        <button
+          id="swap-button"
+          class="swap-button"
+          type="button"
+          aria-label="Swap currencies"
+          title="Swap currencies"
+        >
+          ⇄
+        </button>
+
+        <div class="currency-field">
+          <label for="to-currency">To</label>
+          <select id="to-currency" required></select>
+        </div>
+      </div>
+
+      <button id="convert-button" class="convert-button" type="submit">
+        Convert
+      </button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">
+      Enter an amount and choose currencies.
+    </p>
+
+    <section id="result" class="result" aria-live="polite" hidden>
+      <p class="result-label">Converted amount</p>
+      <p id="converted-amount" class="converted-amount"></p>
+      <p id="exchange-rate" class="exchange-rate"></p>
+    </section>
+
+    <footer>
+      Exchange rates are provided by Frankfurter.
+    </footer>
+  </main>
+</body>
+</html>
